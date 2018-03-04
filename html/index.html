@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="https://v40.pingendo.com/assets/4.0.0/default/theme.css" type="text/css">
+  <title>DCコインサイト</title>
+</head>
+
+<body class="bg-light" style="background-position:center bottom;background-size:fit;background-repeat:no-repeat;">
+  <div class="py-2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class="display-1 bg-gradient"><b>DCサイト</b></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1 class=""><b><u>Status</u></b></h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-1">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 bg-secondary border">
+          <h1 class="text-center"><b>Ethereum</b></h1>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-8">
+              <h1 class="text-center" id="eth_val"></h1>
+            </div>
+            <div class="col-md-4">
+              <h1 class=""><b>ETH</b></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 border bg-secondary">
+          <h1 class="text-center"><b>DIer Coin</b></h1>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-8">
+              <h1 class="text-center" id="dc_val"></h1>
+            </div>
+            <div class="col-md-4">
+              <h1 class=""><b>DC</b></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12 py-2"></div>
+          </div>
+          <h1 class=""><b><u>DCサービス</u></b>
+            <br>
+          </h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="py-0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 bg-secondary border">
+          <h1 class="text-center">残りベット数</h1>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-8">
+              <h1 class="text-center" id="last_count"></h1>
+            </div>
+            <div class="col-md-4">
+              <h1 class=""><b>回</b></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 bg-secondary border">
+          <h1 class="text-center"><b>トータルベット数</b></h1>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-8">
+              <h1 class="text-center" id="total_bet"></h1>
+            </div>
+            <div class="col-md-4">
+              <h1 class=""><b>DC</b></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 bg-secondary border">
+          <h1 class="text-center"><b>あなたのベット数</b></h1>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-8">
+              <h1 class="text-center" id="my_bet"></h1>
+            </div>
+            <div class="col-md-4">
+              <h1 class=""><b>DC</b></h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 py-2"></div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-8">
+                      <form class="form-inline">
+                        <div class="input-group">
+                          <input id="exchange_eth" type="number" class="form-control" placeholder="Input　ETH">
+                          <div class="input-group-append">
+                            <button id="exchange_btn" class="btn btn-primary" type="button">&nbsp; &nbsp; 交換 &nbsp; &nbsp;</button>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="col-md-4"></div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <a class="btn btn-primary" id="bet_btn">ベット（１回500DC）</a>
+                    </div>
+                    <div class="col-md-6">
+                      <a class="btn btn-primary" id="cancel_btn">ベットをキャンセル</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script>
+var web3 = new Web3(web3.currentProvider);
+web3.eth.defaultAccount = web3.eth.accounts[0];
+var DIerContract = web3.eth.contract([
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_spender",
+				"type": "address"
+			},
+			{
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "betTokensList",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "totalSupply",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "betAddress",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_from",
+				"type": "address"
+			},
+			{
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "decimals",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"name": "balance",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "cancelBet",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_to",
+				"type": "address"
+			},
+			{
+				"name": "_value",
+				"type": "uint256"
+			}
+		],
+		"name": "transfer",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "icon",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "betCoin",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_owner",
+				"type": "address"
+			},
+			{
+				"name": "_spender",
+				"type": "address"
+			}
+		],
+		"name": "allowance",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "totalBet",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "fallback"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "eth_val",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "token_val",
+				"type": "uint256"
+			}
+		],
+		"name": "TokenChange",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "winner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "looser",
+				"type": "address[]"
+			}
+		],
+		"name": "BetResult",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "spender",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "value",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	}
+]);
+
+var DIer = DIerContract.at("0xaab0030c5046d06b893508a59ca7e92f84d150d2");
+
+//ETHの取得
+web3.eth.getBalance(web3.eth.defaultAccount, function(err, result){
+    if(!err){
+        var bal = web3.fromWei(result.toNumber(),"ether");
+        $("#eth_val").html(bal);
+    } else {
+        console.error(err);
+    }
+});
+//DCの取得
+DIer.balanceOf(web3.eth.defaultAccount, function(err, result){
+    if(!err){
+        $("#dc_val").html(result.toNumber());
+    } else {
+        console.error(err);
+    }
+});
+//トータルベットと残り回数
+DIer.totalBet(function(err, result){
+    if(!err){
+        $("#last_count").html(5-result.toNumber()/500);
+        $("#total_bet").html(result.toNumber());
+    } else {
+        console.error(err);
+    }
+});
+//マイベット
+DIer.betTokensList(web3.eth.defaultAccount, function(err, result){
+    if(!err){
+        var tmp = 500 * result.toNumber();
+        $("#my_bet").html(tmp);
+    } else {
+        console.error(err);
+    }
+});
+//DCトークンの交換
+$("#exchange_btn").click(function() {
+    var exchange_val = web3.toWei($("#exchange_eth").val(), 'ether');
+    var tnxObj = {from: web3.eth.defaultAccount, to: "0xaab0030c5046d06b893508a59ca7e92f84d150d2", value: exchange_val};
+    web3.eth.sendTransaction(tnxObj, function(){});
+});
+//ベット
+$("#bet_btn").click(function() {
+    DIer.betCoin(function(){});
+});
+//キャンセルベット
+$("#cancel_btn").click(function() {
+    DIer.cancelBet(function(){});
+});
+
+</script>
+
+
+  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 10px;right:10px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:180px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo&nbsp;&nbsp;
+    <img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16">
+  </pingendo>
+</body>
+
+</html>
